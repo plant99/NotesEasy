@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Note<%= notes['sNo']%></title>
+</head>
+<body>
+	<!--Variable here-->
+	<textarea id="editNote"></textarea>
+	<br>
+	<input type="button" value="Save" >
+	<br>
+	<input type="button" value="Cancel">
+
+<script type="text/javascript">
+		window.onload = function(){
+
+			var title = document.getElementsByTagName("title")[0].innerHTML;
+			var xhr = new XMLHttpRequest()
+			xhr.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+				   document.getElementById('editNote').innerHTML = this.responseText
+				}
+			}
+			//variable down here
+			xhr.open('GET','/getContent/'+title.slice(4),true)
+			xhr.send()
+		}
+		
+
+</script>
+</body>
+</html>

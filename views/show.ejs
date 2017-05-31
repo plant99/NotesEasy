@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--Variable here-->
+	<title>Note<%= notes['sNo']%></title>
+</head>
+<body>
+	<!--Variable here-->
+	<div class="viewNote"><%= notes['content']%></div>
+	<br>
+	<form method="GET" action="/edit/<%= notes['sNo'] %>">
+		<input type="submit" value="Edit" id="editNote">
+	</form>
+	<br>
+	<form method="POST" action="/delete/<%= notes['sNo'] %>">
+		<input type="submit" value="Delete" id="deleteNote">
+	</form>
+
+<script type="text/javascript">
+	var deleteNote = document.getElementById('deleteNote')
+	var editNote = document.getElementById('editNote')
+	var title = document.getElementsByTagName("title")[0].innerHTML;
+	/*
+	deleteNote.onclick = function(){
+		var xhr = new XMLHttpRequest()
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.body.innerHTML = this.responseText
+			}
+		}
+		xhr.open('POST','/delete/'+title.slice(4),true)
+		xhr.send()
+	}
+	
+
+	editNote.onclick = function(){
+		var xhr = new XMLHttpRequest()
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.body.innerHTML = this.responseText
+			}
+		}
+		xhr.open('GET','/edit/'+title.slice(4),true)
+		xhr.send()
+	}*/
+</script>
+</body>
+</html>

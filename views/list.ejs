@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List of all notes</title>
+</head>
+<body>
+ <% console.log(notes) %>
+ <ul>
+	 <% for (var i=0 ;i<notes.length ;i++){ %>
+	 <li> <%= notes[i]['sNo']%><a href="/show/<%=notes[i]['sNo']%>">. <%= notes[i]['content'] %> </a></li>
+	 <%}%>
+ </ul>
+</body>
+</html>
