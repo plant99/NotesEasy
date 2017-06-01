@@ -14,6 +14,7 @@ var listHandler = require('./routes/listHandler');
 var show = require('./routes/show')
 var delete1 = require('./routes/delete1')
 var edit = require('./routes/edit')
+var saveNote = require('./routes/saveNote')
 
 app = express();
 initDB = require('./routes/mongoStart').initDB;
@@ -36,6 +37,7 @@ app.use('/list',listHandler)
 app.use('/show',show)
 app.use('/delete',delete1)
 app.use('/edit',edit)
+app.use('/save',saveNote)
 app.use('/getContent/:sNo',function(req,res){
 	Note.find({sNo:req.params.sNo},function(err,notes){
 		if(err)

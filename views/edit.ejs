@@ -5,11 +5,13 @@
 </head>
 <body>
 	<!--Variable here-->
-	<textarea id="editNote"></textarea>
-	<br>
-	<input type="button" value="Save" >
-	<br>
-	<input type="button" value="Cancel">
+	<form method="POST" enctype="multipart/form-data" action="/save/<%= notes['sNo']%>">
+		<textarea id="editNote" name="content"></textarea>
+		<br>
+		<input type="submit" value="Save" id="save">
+		<br>
+	</form>
+	<input type="button" value="Cancel" id="cancel">
 
 <script type="text/javascript">
 		window.onload = function(){
@@ -25,6 +27,7 @@
 			xhr.open('GET','/getContent/'+title.slice(4),true)
 			xhr.send()
 		}
+		var save = document.getElementById('save')
 		
 
 </script>
