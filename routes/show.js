@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var serial;
-router.get('/:serial',function(req,res){
+router.get('/:id',function(req,res){
 	//req.params.serial
-	Note.find({sNo:req.params.serial},function(err,notes){
+	Note.find({_id:req.params.id},function(err,notes){
 		res.render('show',{notes:notes[0]})
 	})
 })

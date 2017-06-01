@@ -3,16 +3,16 @@ var router = express.Router();
 var formidable = require('formidable')
 
 /* GET home page. */
-router.post('/:sNo', function(req, res) {
+router.post('/:id', function(req, res) {
 	var form = new formidable.IncomingForm();
 		form.parse(req,function(err,fields,files){
-			Note.find({sNo:req.params.sNo},function(err,notes){
+			Note.find({_id:req.params.id},function(err,notes){
 				notes[0].content = fields['content']
 				notes[0].save(function(err,note){
 					console.log(note)
 				})
 			})
-			console.log(req.params.sNo)
+			console.log(req.params._id)
 			setTimeout(function(){
 				res.end('Change is saved')
 			},1000)

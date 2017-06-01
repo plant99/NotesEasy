@@ -5,26 +5,20 @@ var formidable = require('formidable')
 module.exports.postAdd = function(req,res,next){
 		var form = new formidable.IncomingForm();
 		form.parse(req,function(err,fields,files){
-			Note.find(function(err,notes){
-				var newNoteIndex = notes.length + 1  ;
-				console.log(newNoteIndex)
 				var note = new Note({
-				content:fields['note'],
-				sNo:newNoteIndex
+				content:fields['note']
 				})
 				note.save(function(err,note){
 					if(err)
 						console.log(err) ;
 					else{
 							console.log('Data saved') ;
-							console.log(note.content)
+							console.log(note.content+ " " + note._id)
 						}
 
 
 				})
-			
 				
-			})
 			
 			setTimeout(function(){
 				res.end('Your note was saved. To view the list please go to /list')

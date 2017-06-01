@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Note<%= notes['sNo']%></title>
+	<title>Note<%= notes['_id']%></title>
 </head>
 <body>
 	<!--Variable here-->
-	<form method="POST" enctype="multipart/form-data" action="/save/<%= notes['sNo']%>">
+	<form method="POST" enctype="multipart/form-data" action="/save/<%= notes['_id']%>">
 		<textarea id="editNote" name="content"></textarea>
 		<br>
 		<input type="submit" value="Save" id="save">

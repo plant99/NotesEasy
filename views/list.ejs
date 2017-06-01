@@ -7,7 +7,7 @@
  <% console.log(notes) %>
  <ul>
 	 <% for (var i=0 ;i<notes.length ;i++){ %>
-	 <li> <%= notes[i]['sNo']%><a href="/show/<%=notes[i]['sNo']%>">. <%= notes[i]['content'] %> </a></li>
+	 <li> <a href="/show/<%=notes[i]['_id']%>"> <%= notes[i]['content'] %> </a>id:(<%= notes[i]['_id']%>)</li>
 	 <%}%>
  </ul>
 </body>

@@ -41,8 +41,8 @@ app.use('/save',saveNote)
 app.use('/cancel',function(req,res){
 	res.redirect('/list')
 })
-app.use('/getContent/:sNo',function(req,res){
-	Note.find({sNo:req.params.sNo},function(err,notes){
+app.use('/getContent/:id',function(req,res){
+	Note.find({_id:req.params.id},function(err,notes){
 		if(err)
 			console.log(err)
 		else{

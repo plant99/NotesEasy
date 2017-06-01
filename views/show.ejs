@@ -2,17 +2,17 @@
 <html>
 <head>
 <!--Variable here-->
-	<title>Note<%= notes['sNo']%></title>
+	<title>Note<%= notes['_id']%></title>
 </head>
 <body>
 	<!--Variable here-->
 	<div class="viewNote"><%= notes['content']%></div>
 	<br>
-	<form method="GET" action="/edit/<%= notes['sNo'] %>">
+	<form method="GET" action="/edit/<%= notes['_id'] %>">
 		<input type="submit" value="Edit" id="editNote">
 	</form>
 	<br>
-	<form method="POST" action="/delete/<%= notes['sNo'] %>">
+	<form method="POST" action="/delete/<%= notes['_id'] %>">
 		<input type="submit" value="Delete" id="deleteNote">
 	</form>
 

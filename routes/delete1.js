@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-router.post('/:sNo',function(req,res){
-	Note.remove({sNo:req.params.sNo},function(err, notes){
+router.post('/:id',function(req,res){
+	Note.remove({_id:req.params.id},function(err, notes){
 		if(err)
 			console.log(err) ;
 		else{
 			res.setHeader('Content-Type','text/plain')
-			res.end('This note with serial no '+req.params.sNo+ ' has been deleted.')
+			res.end('This note with id '+req.params.id+ ' has been deleted.')
 		}
 
 
