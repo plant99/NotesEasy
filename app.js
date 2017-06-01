@@ -38,6 +38,9 @@ app.use('/show',show)
 app.use('/delete',delete1)
 app.use('/edit',edit)
 app.use('/save',saveNote)
+app.use('/cancel',function(req,res){
+	res.redirect('/list')
+})
 app.use('/getContent/:sNo',function(req,res){
 	Note.find({sNo:req.params.sNo},function(err,notes){
 		if(err)

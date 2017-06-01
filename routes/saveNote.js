@@ -14,7 +14,7 @@ router.post('/:sNo', function(req, res) {
 			})
 			console.log(req.params.sNo)
 			setTimeout(function(){
-				res.end('Chutiyap is on')
+				res.end('Change is saved')
 			},1000)
 	})
 })
