@@ -23,7 +23,7 @@ module.exports.postAdd = function(req,res,next){
 			
 			setTimeout(function(){
 				res.render('message',{
-					message:'Your note was saved. To view the notes please go to /list'
+					message:'Your note was saved'
 				})
 			},1000)
 			/*db.collection('notes').insert(fields)
