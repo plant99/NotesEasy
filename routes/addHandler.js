@@ -10,8 +10,14 @@ module.exports.postAdd = function(req,res,next){
 				priority:fields['priority']
 				})
 				note.save(function(err,note){
-					if(err)
+					if(err){
 						console.log(err) ;
+						res.render('error',{
+							message: "God knows what's going on. What about you troubleshoot me at:",
+							email: "shivashispadhi@gmail.com"
+						})
+					}
+						
 					else{
 							console.log('Data saved') ;
 							console.log(note.content+ " " + note.priority)
