@@ -6,8 +6,10 @@ router.post('/:id',function(req,res){
 		if(err)
 			console.log(err) ;
 		else{
-			res.setHeader('Content-Type','text/plain')
-			res.end('This note with id '+req.params.id+ ' has been deleted.')
+			res.setHeader('Content-Type','text/html')
+			res.render('message',{
+				message: 'This note with id '+req.params.id+ ' has been deleted.'
+			})
 		}
 
 

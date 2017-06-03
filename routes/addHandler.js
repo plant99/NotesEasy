@@ -6,14 +6,15 @@ module.exports.postAdd = function(req,res,next){
 		var form = new formidable.IncomingForm();
 		form.parse(req,function(err,fields,files){
 				var note = new Note({
-				content:fields['note']
+				content:fields['note'],
+				priority:fields['priority']
 				})
 				note.save(function(err,note){
 					if(err)
 						console.log(err) ;
 					else{
 							console.log('Data saved') ;
-							console.log(note.content+ " " + note._id)
+							console.log(note.content+ " " + note.priority)
 						}
 
 
@@ -21,7 +22,9 @@ module.exports.postAdd = function(req,res,next){
 				
 			
 			setTimeout(function(){
-				res.end('Your note was saved. To view the list please go to /list')
+				res.render('message',{
+					message:'Your note was saved. To view the notes please go to /list'
+				})
 			},1000)
 			/*db.collection('notes').insert(fields)
 			console.log('inserted')

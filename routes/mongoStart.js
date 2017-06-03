@@ -9,7 +9,6 @@ module.exports.initDB = function() {
 		console.log('Connected');
 		var noteSchema = mongoose.Schema({
 			content: String,
-			sNo: Number,
 			priority: Number
 		})
 

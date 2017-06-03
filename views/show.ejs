@@ -3,18 +3,67 @@
 <head>
 <!--Variable here-->
 	<title>Note<%= notes['_id']%></title>
+	<style type="text/css">
+		body{
+        text-align: center; 
+        padding: 50px;
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+        background-color: #51c19e ;
+	    }
+	    .viewNote{
+	      font-size: 1.5vw ;
+	    }
+	    .c1{
+            color: green ;
+        }
+        .c2{
+            color: yellow ;
+        }
+        .c3{
+            color: red;
+        }
+	  	
+	  
+	  	@media only screen and (max-device-width : 700px){
+            h1{
+              font-size: 10vw ;
+            }
+            .viewNote{
+            	text-align: center;
+            	margin-left: 15%;
+              width:70% ;
+              font-size: 6vw ;
+              height: 40%;
+              border-radius: 10px ;
+            }
+            p, input{
+              font-size: 6vw ;
+            }
+            input{
+            border-radius: 10px ;
+          }
+          #editNote, #deletNote{
+          	text-align: left;
+          }
+          
+          }
+	</style>
 </head>
 <body>
 	<!--Variable here-->
-	<div class="viewNote"><%= notes['content']%></div>
+	<div class="viewNote c<%= notes['priority'] %>"><%= notes['content']%></div>
 	<br>
-	<form method="GET" action="/edit/<%= notes['_id'] %>">
-		<input type="submit" value="Edit" id="editNote">
-	</form>
 	<br>
-	<form method="POST" action="/delete/<%= notes['_id'] %>">
-		<input type="submit" value="Delete" id="deleteNote">
-	</form>
+	
+		<form method="GET" action="/edit/<%= notes['_id'] %>">
+			<input type="submit" value="Edit" id="editNote">
+		</form>
+		<br>
+		<br>
+		<form method="POST" action="/delete/<%= notes['_id'] %>">
+			<input type="submit" value="Delete" id="deleteNote">
+		</form>
+	
 
 <script type="text/javascript">
 	var deleteNote = document.getElementById('deleteNote')

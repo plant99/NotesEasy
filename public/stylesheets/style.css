@@ -1,8 +1,22 @@
 body {
+	text-align: center; 
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #51c19e ;
 }
 
 a {
   color: #00B7FF;
+}
+.note{
+	border:none;
+	border-radius: 5px;
+	border-bottom-right-radius: 10px;
+	margin: 20px auto ;
+	font-family: monospace; 
+}
+@media only screen and (max-device-width : 700px){
+	h1{
+		color: blue ;
+	}
 }
