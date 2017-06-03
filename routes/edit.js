@@ -12,7 +12,7 @@ router.get('/:id',function(req,res){
 			})
 		}else{
 			res.render('error',{
-				message: "God knows what's going on. What about you troubleshoot me at:",
+				message: "God knows what's going on. What about you troubleshoot the issue at:",
 				email: "shivashispadhi@gmail.com"
 			})
 		}
@@ -21,7 +21,7 @@ router.get('/:id',function(req,res){
 })
 router.use(function(req,res){
 	res.render('error',{
-				message: "God knows what's going on. What about you troubleshoot me at:",
+				message: "God knows what's going on. What about you troubleshoot the issue at:",
 				email: "shivashispadhi@gmail.com"
 			})
 })

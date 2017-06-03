@@ -6,7 +6,7 @@ router.post('/:id',function(req,res){
 		if(err){
 						console.log(err) ;
 						res.render('error',{
-							message: "God knows what's going on. What about you troubleshoot me at:",
+							message: "God knows what's going on. What about you troubleshoot the issue at:",
 							email: "shivashispadhi(at)gmail.com"
 						})
 					}
